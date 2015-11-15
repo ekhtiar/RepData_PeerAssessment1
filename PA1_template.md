@@ -38,7 +38,7 @@ median(totalStepsbyDay, na.rm = TRUE)
 hist(totalStepsbyDay, breaks = 10, main = "Total number of steps taken per day", xlab = "Steps taken per day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
+![](PA1_template_files/figure-html/total_steps_per_day-1.png) 
 
 ## What is the average daily activity pattern?
 
@@ -48,7 +48,7 @@ hist(totalStepsbyDay, breaks = 10, main = "Total number of steps taken per day",
 plot(names(totalStepsbyInterval), totalStepsbyInterval, main = "average daily activity pattern", xlab = "Interval of Day", ylab = "Avg Steps Taken")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![](PA1_template_files/figure-html/average_daily_activity-1.png) 
 
 ```r
 #Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
@@ -90,7 +90,7 @@ regTotalStepsbyDay <- tapply(regActivity$steps, regActivity$date, FUN=sum)
 hist(regTotalStepsbyDay, breaks = 10, main = "Total number of steps taken per day", xlab = "Steps taken per day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
+![](PA1_template_files/figure-html/missing_values_rectification-1.png) 
 
 ```r
 #calculate the new mean
@@ -131,4 +131,4 @@ library(ggplot2)
 ggplot(compare, aes(interval, steps)) + geom_line() + facet_grid(day ~ .) +  xlab("Interval") + ylab("Steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![](PA1_template_files/figure-html/weekend_vs_weekdays-1.png) 
